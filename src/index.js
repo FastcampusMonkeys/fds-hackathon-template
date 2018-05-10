@@ -17,16 +17,13 @@ class baseBallGame {
   // 정답숫자 변수에 저장.
   randomNumber = this.randomNumCreate()
 
-    userNumber = document.getElementsByName("userNumber");
-    userNumber1 = document.querySelector(".userNumber1").value; 
-    userNumber2 = document.querySelector(".userNumber2").value;
-    userNumber3 = document.querySelector(".userNumber3").value;
+  userNumber = document.getElementsByName("userNumber");
   
  
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
 
-  Checker() {
+  checker() {
     // 비교시작
     let s = 0,
       b = 0; // 이중포문을 통해 인수값과 결과같이 같으면 strike, 결과값만 같으면 ball 둘다 같지 않으면 아웃으로 처리.
@@ -36,17 +33,17 @@ class baseBallGame {
           s++;
         } else if (this.randomNumber[i] == this.userNumber[j].value && i != j) {
           b++;
-        } else {
         }
       }
     }
     return `${s}` + " strike " + `${b}`+ " ball";
   }
+   checkers = this.checker();
 }
 
 const game = new baseBallGame();
 console.log(game.randomNumCreate())
-console.log(game.Checker())
+console.log(game.checker())
 
 // 변경사항
 const select = document.querySelector(".input-box__try"); // DOM 설정  시작!! 박스로 userNumber값 넘기기
