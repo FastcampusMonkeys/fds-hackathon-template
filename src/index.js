@@ -31,8 +31,8 @@ return "strike" + `${s}`+ "ball" + `${b}`;
  }
 }
 
-
-const select = document.querySelector('.input-box__try'); // DOM 설정  시작!! 박스로 userNumber값 넘기기
+const select = new baseBallGame();
+select = document.querySelector('.input-box__try'); // DOM 설정  시작!! 박스로 userNumber값 넘기기
 
 
 // 세자리수가 랜덤으로 0~9 까지나오고
