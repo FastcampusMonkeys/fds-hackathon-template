@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>baseball Game</title>
-    <link rel="stylesheet" href="./index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>baseball Game</title>
+<link rel="stylesheet" href="./index.css">
 </head>
-
 <body>
     <h1 class="main__title">base ball Game</h1>
     <form class="input-box">
-        <input class="userNumber1 box" type="text" name="userNumber">
-        <input class="userNumber2 box" type="text" name="userNumber">
-        <input class="userNumber3 box" type="text" name="userNumber">
+        <input class="userNumber1 box" type="text" name="userNumber" maxlength="1">
+        <input class="userNumber2 box" type="text" name="userNumber" maxlength="1">
+        <input class="userNumber3 box" type="text" name="userNumber" maxlength="1">
         <button type="button" class="input-box__try">시도</button>
-        <button class="input-box__reset">다시 시작</button>
+        <button type="button" class="input-box__reset">다시 시작</button>
     </form>
     <div class="turn-list"></div>
     <div class="answer"></div>
