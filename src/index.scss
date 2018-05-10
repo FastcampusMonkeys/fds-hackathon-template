@@ -1,17 +1,25 @@
-
-.content {
-  width: 1100px;
-  margin: 0 auto;
-  position: relative;
-}
-.main__title{
+.main__title {
   color: green;
   text-align: center;
-}
-.input-box{
- text-align: center;
-}
-.input-box__digit{
+ }
+ 
+ .input-box {
+  text-align: center;
+ }
+ 
+ .box {
   width: 30px;
   height: 30px;
-}
+  text-align: center;
+ }
+ 
+ .turn-list{
+  width: 400px;
+  margin:0 auto;
+ }
+ .score-box{
+  padding:5px 0;
+  margin:5px 0;
+  letter-spacing: 2px;
+  font-size:20px;
+ }
