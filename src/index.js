@@ -30,7 +30,6 @@ class baseBallGame {
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
 
-  
   checker() {
     // 비교시작
     let s = 0, b = 0, c='OUT'; // 이중포문을 통해 인수값과 결과같이 같으면 strike, 결과값만 같으면 ball 둘다 같지 않으면 아웃으로 처리.
@@ -50,7 +49,7 @@ class baseBallGame {
         }
       }
     }
-    return [s + "strike " + b + "ball", s];
+    return [s + "S " + b + "B", s, b];
   }
 
 }
@@ -65,16 +64,40 @@ console.log(randomNumber1,randomNumber2,randomNumber3);
 
 btnTry.addEventListener('click', function () {
   let iDiv = document.createElement('div');
+  iDiv.className = 'score-box';
+  let iCount = document.createElement('div');
+  iCount.className = 'count';
+  let iScore = document.createElement('div');
+  iScore.className = 'score';
+  let iNumber1 = document.createElement('span');
+  let iNumber2 = document.createElement('span');
+  let iNumber3 = document.createElement('span');
+  iNumber1.className = 'inumber';
+  iNumber2.className = 'inumber';
+  iNumber3.className = 'inumber';
   count++;
   document.querySelector('.turn-list').appendChild(iDiv);
-  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
+  iDiv.appendChild(iCount);
+  iDiv.appendChild(iScore);
+  iDiv.appendChild(iNumber1);
+  iDiv.appendChild(iNumber2);
+  iDiv.appendChild(iNumber3);
+  //iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
+  iCount.textContent = count + '회';
+  iNumber1.textContent = num1.value;
+  iNumber2.textContent = num2.value;
+  iNumber3.textContent = num3.value;
+
+  iScore.textContent = game.checker()[0];
 
   // 이부분 코딩중입니다!
   if (game.checker()[1] === 3){ 
     alert("정답입니다");
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
-
+  }
+  if (game.checker()[1] === 0 && game.checker()[2] === 0) {
+    iScore.textContent = 'OUT';
   }
   num1.value = "";
   num2.value = "";
