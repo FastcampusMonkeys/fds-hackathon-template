@@ -22,6 +22,7 @@ class baseBallGame {
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
 
+  
   checker() {
     // 비교시작
     let s = 0,
@@ -35,7 +36,7 @@ class baseBallGame {
         }
       }
     }
-    return s + "strike " + b + "ball";
+    return [s + "strike " + b + "ball", s];
   }
 
 }
@@ -54,18 +55,23 @@ let trial = document.getElementsByName('trial');
 let answer = document.querySelector('.answer');
 let count = 0;
 
+console.log(randomNumber1,randomNumber2,randomNumber3);
+
+
 btnTry.addEventListener('click', function () {
   let iDiv = document.createElement('div');
   iDiv.className = 'score-box';
   count++;
   document.querySelector('.turn-list').appendChild(iDiv);
-  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker();
+  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
 
   // 이부분 코딩중입니다!
-  // if(iDiv.elmatches('3strikes')){ 
-  //   let iDiv2 = document.createElement('div');
-  //   iDiv2.textContent = "Finish! Congraturation!!"; 
-  // }
+  if (game.checker()[1] === 3){ 
+    alert("정답입니다");
+    answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
+    btnTry.setAttribute("disabled", "disabled");
+
+  }
   num1.value = "";
   num2.value = "";
   num3.value = "";
@@ -74,7 +80,10 @@ btnTry.addEventListener('click', function () {
 
   if(count === 9){
     answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.'
+    alert("게임이 끝났습니다 그만 하시죠 사장님");
+    btnTry.setAttribute("disabled", "disabled");
   }
+ 
 });
 
 num1.addEventListener('keypress', function () {
@@ -90,12 +99,12 @@ num2.addEventListener('keypress', function () {
     num3.focus();
   }
 });
-// 이부분 입니다!
-num3.addEventListener('keypress', function () {
-  if (num3.value !== '' || num3.value !== null) {
-    trial.focus();
-  }
-});
+ // 이부분 입니다!
+// num3.addEventListener('keypress', function () {
+//   if (num3.value !== '' || num3.value !== null) {
+//     trial.focus();
+//   }
+// });
 // 새로고침
 btnReset.addEventListener('click', () => {
   location.replace('');
