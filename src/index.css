@@ -8,20 +8,47 @@
 }
 
 .box {
+  box-sizing: border-box;
   width: 30px;
   height: 30px;
   text-align: center;
+  border:1px solid #ccc;
+}
+.box:focus{
+  border-color:red;
+  background:#e5e7be;
 }
 
 .turn-list {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
+  text-indent: 30px;
 }
 
 .score-box {
-  padding: 5px 0;
+  padding: 5px 0 15px;
   margin: 5px 0;
   letter-spacing: 2px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+[type=button]{
+  box-sizing: border-box;
+  border:1px solid #ccc;
+  background:#b9da9b;
+  cursor: pointer;
+  height:30px;
+  vertical-align: top;
+}
+.input-box__reset{
+  background:#dbc596;
+}
+
+.answer{
+  padding:5px 0;
+  text-align: center;
+  color:#f22;
   font-size: 20px;
 }
 /*# sourceMappingURL=index.css.map */
