@@ -1,3 +1,11 @@
+
+html{
+  background-image: url("../img/baseball-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  
+}
 .main__title {
   color: green;
   text-align: center;
