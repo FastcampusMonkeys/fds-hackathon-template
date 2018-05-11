@@ -33,9 +33,10 @@ body{
   border:1px solid #ccc;
   border-radius: 50%;
 }
-.box:focus{
-  border-color:red;
-  background:#e5e7be;
+
+.box:focus {
+    border-color: red;
+    background: #e5e7be;
 }
 
 .turn-list {
@@ -96,9 +97,10 @@ button:disabled{
   letter-spacing:5px;
   margin-right:53px;
 }
-.score{
-  float: right;
-  text-align: right;
+
+.score {
+    float: right;
+    text-align: right;
 }
 .inumber{
   display: inline-block;
@@ -114,4 +116,6 @@ button:disabled{
   margin:0 2px;
   box-shadow: 0 0 11px #70cc1a;
 }
+
+
 /*# sourceMappingURL=index.css.map */
