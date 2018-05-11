@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>baseball Game</title>
-    <link rel="stylesheet" href="./index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>baseball Game</title>
+<link rel="stylesheet" type="text/css" href="./index.css">
 </head>
-
 <body>
-    <audio src="../MBCSports.mp3" type="audio/mp3" autoplay="true" loop></audio>
-    <h1 class="main__title">base ball Game</h1>
+    <h1 class="main__title">Baseball Game</h1>
     <form class="input-box">
         <input class="box" type="text" name="userNumber" maxlength="1">
         <input class="box" type="text" name="userNumber" maxlength="1">
@@ -20,10 +17,18 @@
         <button type="button" class="input-box__reset">다시 시작</button>
     </form>
     <div class="turn-list">
+        <div class="box-guide">
+            <strong class="title-guide">GAME GUIDE</strong>
+            3개의 다른 숫자를 맞추는 게임입니다.<br>
+            숫자와 자리가 같을시 1스트라이크.<br>
+            숫자만 같고 자리가 틀렸을때 1볼.<br>
+            모든 숫자가 틀렸을때 아웃.<br>
+            3스트라이크시 승리합니다.
+        </div>
     </div>
     <div class="answer"></div>
 
+    <audio src="../MBCSports.mp3" type="audio/mp3" id="audioSports"></audio>
     <script src="./index.js"></script>
 </body>
-
 </html>
