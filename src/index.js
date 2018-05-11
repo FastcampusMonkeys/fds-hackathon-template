@@ -8,6 +8,8 @@ const trial = document.getElementsByName('btnTry')[0];
 const turnList = document.querySelector('.turn-list');
 let count = 0;
 
+
+
 class baseBallGame {
   answerArr = [];
   randomNumCreate() {
@@ -59,10 +61,10 @@ const game = new baseBallGame();
 // 변경사항
 
 
-console.log(randomNumber1,randomNumber2,randomNumber3);
 
 
 btnTry.addEventListener('click', function () {
+
   let iDiv = document.createElement('div');
   iDiv.className = 'score-box';
   let iCount = document.createElement('div');
