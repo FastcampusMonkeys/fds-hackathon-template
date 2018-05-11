@@ -7,7 +7,7 @@ class baseBallGame {
     while (randomNumber1 === randomNumber2);
     do randomNumber3 = Math.round(Math.random() * 9);
     while (randomNumber2 === randomNumber3 || randomNumber3 === randomNumber1);
-    answerArr = [randomNumber1,randomNumber2,randomNumber3]
+    answerArr = [randomNumber1, randomNumber2, randomNumber3]
     return answerArr;
   }
 
@@ -17,9 +17,8 @@ class baseBallGame {
   // 정답숫자 변수에 저장.
   randomNumber = this.randomNumCreate()
 
-  userNumber = document.getElementsByName("userNumber");
-  
- 
+  userNumber = document.getElementsByName('userNumber');
+
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
 
@@ -38,12 +37,10 @@ class baseBallGame {
     }
     return s + "strike " + b + "ball";
   }
-   //checkers = this.checker();
+
 }
 
 const game = new baseBallGame();
-console.log(game.randomNumCreate())
-console.log(game.checker())
 
 // 변경사항
 const btnTry = document.querySelector(".input-box__try"); // DOM 설정  시작!! 박스로 userNumber값 넘기기
@@ -53,45 +50,61 @@ const btnReset = document.querySelector('.input-box__reset');
 let num1 = document.getElementsByName('userNumber')[0];
 let num2 = document.getElementsByName('userNumber')[1];
 let num3 = document.getElementsByName('userNumber')[2];
+let trial = document.getElementsByName('trial');
+let answer = document.querySelector('.answer');
 let count = 0;
-btnTry.addEventListener('click', function(){  
+
+btnTry.addEventListener('click', function () {
   let iDiv = document.createElement('div');
-  count++;
   iDiv.className = 'score-box';
+  count++;
   document.querySelector('.turn-list').appendChild(iDiv);
-  iDiv.textContent = count + '회 ========= ' + num1.value + ' ' + num2.value + ' ' + num3.value;
-  //game.checker();
+  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker();
+
+  // 이부분 코딩중입니다!
+  // if(iDiv.elmatches('3strikes')){ 
+  //   let iDiv2 = document.createElement('div');
+  //   iDiv2.textContent = "Finish! Congraturation!!"; 
+  // }
   num1.value = "";
   num2.value = "";
   num3.value = "";
+  
   num1.focus();
+
+  if(count === 9){
+    answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.'
+  }
 });
 
-num1.addEventListener('keypress', function(){
+num1.addEventListener('keypress', function () {
   numTest = /^[0-9]/g;
-  if(num1.value !== '' || num1.value !== null || num1.value === numTest){
+  if (num1.value !== '' || num1.value !== null || num1.value === numTest) {
     num2.focus();
-  }else{
+  } else {
     num1.focus().value = '';
   }
 });
-num2.addEventListener('keypress', function(){
-  if(num2.value !== '' || num2.value !== null){
+num2.addEventListener('keypress', function () {
+  if (num2.value !== '' || num2.value !== null) {
     num3.focus();
   }
 });
-
-// num3.addEventListener('keypress', function(){
-//   if(num3.value !== '' || num3.value !== null){
-//     btnTry.focus();
-//   }
-// });
-
-
+// 이부분 입니다!
+num3.addEventListener('keypress', function () {
+  if (num3.value !== '' || num3.value !== null) {
+    trial.focus();
+  }
+});
 // 새로고침
 btnReset.addEventListener('click', () => {
   location.replace('');
 });
+
+
+
+// console.log(game.randomNumCreate())
+// console.log(game.checker())
 // 세자리수가 랜덤으로 0~9 까지나오고
 
 // 같은 번호가 아닌
