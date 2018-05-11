@@ -23,7 +23,8 @@
 
 ## 추가 과제
 
-제가 생각하는 이슈는 두가지인데
-issue1. 포커스넘어가는게 꼬였습니다 ㅠ 
-issue2. 3strike 나오면 게임이 끝나는 부분 text출력하기 + 게임이 끝나면 아무 버튼도 작동안함(숫자는바뀜)
-issue3. 목소리 넣기 ㅎㅎㅎ
+SOUNDJS 를 이용하여 효과음을 넣고 싶습니다 (out, strike 사운드를 찾지 못하였습니다 ㅠㅠ)
+
+## 게임하기
+
+[야구게임](https://fastmonkeysbaseballgame.netlify.com)
