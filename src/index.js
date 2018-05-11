@@ -49,7 +49,7 @@ class baseBallGame {
         }
       }
     }
-    return [s + "strike " + b + "ball", s];
+    return [s + "S " + b + "B", s, b];
   }
 
 }
@@ -68,19 +68,36 @@ btnTry.addEventListener('click', function () {
   let iCount = document.createElement('div');
   iCount.className = 'count';
   let iScore = document.createElement('div');
-  iScore.className = 'socore';
+  iScore.className = 'score';
+  let iNumber1 = document.createElement('span');
+  let iNumber2 = document.createElement('span');
+  let iNumber3 = document.createElement('span');
+  iNumber1.className = 'inumber';
+  iNumber2.className = 'inumber';
+  iNumber3.className = 'inumber';
   count++;
   document.querySelector('.turn-list').appendChild(iDiv);
   iDiv.appendChild(iCount);
   iDiv.appendChild(iScore);
-  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
+  iDiv.appendChild(iNumber1);
+  iDiv.appendChild(iNumber2);
+  iDiv.appendChild(iNumber3);
+  //iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
+  iCount.textContent = count + '회';
+  iNumber1.textContent = num1.value;
+  iNumber2.textContent = num2.value;
+  iNumber3.textContent = num3.value;
+
+  iScore.textContent = game.checker()[0];
 
   // 이부분 코딩중입니다!
   if (game.checker()[1] === 3){ 
     alert("정답입니다");
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
-    
+  }
+  if (game.checker()[1] === 0 && game.checker()[2] === 0) {
+    iScore.textContent = 'OUT';
   }
   num1.value = "";
   num2.value = "";
