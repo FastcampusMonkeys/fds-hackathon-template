@@ -50,7 +50,7 @@ class baseBallGame {
         }
       }
     }
-    return [s + "strike " + b + "ball", s];
+    return [s + "S " + b + "B", s, b];
   }
 
 }
@@ -75,7 +75,9 @@ btnTry.addEventListener('click', function () {
     alert("정답입니다");
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
-
+  }
+  if (game.checker()[1] === 0 && game.checker()[2] === 0) {
+    iDiv.textContent = count + "회 ====== " + num1.value + " " + num2.value + " " + num3.value + " ==== " + "===out";
   }
   num1.value = "";
   num2.value = "";
