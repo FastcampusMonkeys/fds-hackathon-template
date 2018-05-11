@@ -127,27 +127,7 @@ num3.addEventListener('keyup', function () {
     trial.focus();
     }
 });
-//이부분 입니다!
-
-
-// console.log(game.randomNumCreate())
-// console.log(game.checker())
-// 세자리수가 랜덤으로 0~9 까지나오고
-
-// 같은 번호가 아닌
-
-// 정답 3자리수를 컴퓨터가 저장
-
-// —————————————————————
-
-// 시도하는 숫자랑 비교해서 맞는 것을 판단
-
-// 숫자가 위치는 맞지않고 존재하면 ball 개념
-
-// 숫자가 위치까지 맞으면 strikt
-
- 
-
-// console.log(game.randomNumCreate())
-// console.log(game.checker())
- // 세자리수가 랜덤으로 0~9 까지나오고
+//새로고침
+btnReset.addEventListener('click', function(){
+  location.replace('');
+});
