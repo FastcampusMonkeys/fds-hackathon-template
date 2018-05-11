@@ -19,13 +19,13 @@ class baseBallGame {
     while (randomNumber1 === randomNumber2);
     do randomNumber3 = Math.round(Math.random() * 9);
     while (randomNumber2 === randomNumber3 || randomNumber3 === randomNumber1);
-    answerArr = [randomNumber1, randomNumber2, randomNumber3]
+    answerArr = [randomNumber1,randomNumber2,randomNumber3]
     return answerArr;
   }
-
+ 
   // 스코프 오류
   // randomNumber = [randomNumber1, randomNumber2, randomNumber3]; // 배열로 사용하여 비교하기 위해 배열로 정의
-
+ 
   // 정답숫자 변수에 저장.
   randomNumber = this.randomNumCreate();
   userNumber = document.getElementsByName('userNumber');
@@ -59,7 +59,6 @@ class baseBallGame {
 const game = new baseBallGame();
 
 // 변경사항
-
 
 
 
@@ -116,14 +115,12 @@ btnTry.addEventListener('click', function () {
 
 num1.addEventListener('keypress', function () {
   numTest = /^[0-9]/g;
-  if (num1.value !== '' || num1.value !== null || num1.value === numTest) {
+  if(num1.value !== '' || num1.value !== null || num1.value === numTest){
     num2.focus();
-  } else {
-    num1.focus().value = '';
   }
-});
-num2.addEventListener('keypress', function () {
-  if (num2.value !== '' || num2.value !== null) {
+ });
+ num2.addEventListener('keypress', function(){
+  if(num2.value !== '' || num2.value !== null){
     num3.focus();
   }
 });
@@ -132,30 +129,9 @@ num3.addEventListener('keyup', function () {
   if (num3.value !== '' || num3.value === null) {
     
     trial.focus();
-  }
+    }
 });
-// 새로고침
-btnReset.addEventListener('click', () => {
+//새로고침
+btnReset.addEventListener('click', function(){
   location.replace('');
 });
-
-
-// console.log(game.randomNumCreate())
-// console.log(game.checker())
-// 세자리수가 랜덤으로 0~9 까지나오고
-
-// 같은 번호가 아닌
-
-// 정답 3자리수를 컴퓨터가 저장
-
-// —————————————————————
-
-// 시도하는 숫자랑 비교해서 맞는 것을 판단
-
-// 숫자가 위치는 맞지않고 존재하면 ball 개념
-
-// 숫자가 위치까지 맞으면 strikt
-
-// 아무것도 안맞을시  out
-
-// 다맞으면 게임끝

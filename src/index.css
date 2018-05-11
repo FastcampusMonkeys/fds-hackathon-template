@@ -1,4 +1,11 @@
+@charset 'utf-8';
+
+html,body{
+  margin:0;
+  padding:0;
+}
 .main__title {
+<<<<<<< HEAD
     color: green;
     text-align: center;
 }
@@ -13,6 +20,29 @@
     height: 30px;
     text-align: center;
     border: 1px solid #ccc;
+=======
+  margin:0;
+  padding:10px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background:#181818;
+}
+
+.input-box {
+  text-align: center;
+  border-bottom: solid 1px #ccc;
+  padding:15px 0;
+  background:#ccc;
+}
+
+.box {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border:1px solid #ccc;
+  border-radius: 50%;
+>>>>>>> 34fd0b6d5b45251f22717d744c73bd23d29bbdc1
 }
 
 .box:focus {
@@ -21,6 +51,7 @@
 }
 
 .turn-list {
+<<<<<<< HEAD
     width: 300px;
     margin: 30px auto;
     /* text-indent: 30px; */
@@ -54,23 +85,72 @@ button {
     text-align: center;
     color: #f22;
     font-size: 20px;
+=======
+  width: 300px;
+  margin: 30px auto;
+  padding:20px 10px;
+  background:#363833;
+  border:21px inset #665a50;
+  border-radius: 14px;
+  color:rgb(234, 255, 49);
+}
+
+.score-box {
+  overflow: hidden;
+  padding: 5px 5px 15px;
+  margin: 5px 0;
+  letter-spacing: 2px;
+  font-size: 20px;
+  border-bottom: 1px solid #747474;
+}
+
+button{
+  box-sizing: border-box;
+  border:1px solid #ccc;
+  background:#70cc1a;
+  cursor: pointer;
+  height:34px;
+  padding:0 10px;
+  vertical-align: middle;
+  color:#fff;
+}
+.input-box__try{
+  margin-left: 10px;
+}
+.input-box__reset{
+  background:#d19209;
+}
+.answer{
+  padding:15px;
+  text-align: center;
+  color:#111;
+  font-size: 20px;
+>>>>>>> 34fd0b6d5b45251f22717d744c73bd23d29bbdc1
 }
 
 button:disabled {
     border: 1px solid #ccc;
     color: #111;
 }
+<<<<<<< HEAD
 
 .count {
     float: left;
     letter-spacing: 5px;
     margin-right: 55px;
+=======
+.count{
+  float: left;
+  letter-spacing:5px;
+  margin-right:53px;
+>>>>>>> 34fd0b6d5b45251f22717d744c73bd23d29bbdc1
 }
 
 .score {
     float: right;
     text-align: right;
 }
+<<<<<<< HEAD
 
 .inumber {
     display: inline-block;
@@ -83,6 +163,21 @@ button:disabled {
     height: 30px;
     line-height: 30px;
     text-align: center;
+=======
+.inumber{
+  display: inline-block;
+  vertical-align: top;
+  background: #181818;
+  color: rgb(99, 226, 74);
+  border-left: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  margin:0 2px;
+  box-shadow: 0 0 11px #70cc1a;
+>>>>>>> 34fd0b6d5b45251f22717d744c73bd23d29bbdc1
 }
 
 
