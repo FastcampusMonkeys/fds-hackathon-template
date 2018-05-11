@@ -90,6 +90,7 @@ btnTry.addEventListener('click', function () {
   // 이부분 코딩중입니다!
   if (game.checker()[1] === 3){ 
     alert("정답입니다");
+    answer.className += 'on';
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
   }
@@ -102,6 +103,7 @@ btnTry.addEventListener('click', function () {
   num1.focus();
 
   if(count === 9){
+    answer.className += ' on';
     answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.'
     alert("게임이 끝났습니다 그만 하시죠 사장님");
     btnTry.setAttribute("disabled", "disabled");
