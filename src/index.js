@@ -51,7 +51,8 @@ class baseBallGame {
  let num1 = document.getElementsByName('userNumber')[0];
  let num2 = document.getElementsByName('userNumber')[1];
  let num3 = document.getElementsByName('userNumber')[2];
- let trial = document.getElementsByName('trial');
+ let trial = document.getElementsByName('userNumber')[3];
+ let reset1 = document.getElementsByName('userNumber')[4];
  let count = 0;
  btnTry.addEventListener('click', function(){  
   let iDiv = document.createElement('div');
@@ -68,7 +69,7 @@ class baseBallGame {
   num1.value = "";
   num2.value = "";
   num3.value = "";
-
+  trial.value = "";
   num1.focus();
  });
  
@@ -76,8 +77,6 @@ class baseBallGame {
   numTest = /^[0-9]/g;
   if(num1.value !== '' || num1.value !== null || num1.value === numTest){
     num2.focus();
-  }else{
-    num1.focus().value = '';
   }
  });
  num2.addEventListener('keypress', function(){
@@ -85,12 +84,16 @@ class baseBallGame {
     num3.focus();
   }
  });
- // 이부분 입니다!
-num3.addEventListener('keypress', function () {
-  if (num3.value !== ''|| num3.value !== null) {
+
+ num3.addEventListener('keyup', function () {
+  if (num3.value !== '' || num3.value === null) {
     trial.focus();
-  }
+    }
 });
+//이부분 입니다!
+
+
+
  // 새로고침
  btnReset.addEventListener('click', () => {
   location.replace('');
