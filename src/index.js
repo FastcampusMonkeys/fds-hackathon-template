@@ -29,7 +29,8 @@ class baseBallGame {
   userNumber = document.getElementsByName('userNumber');
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
- 
+
+  
   checker() {
     // 비교시작
     let s = 0, b = 0, c='OUT'; // 이중포문을 통해 인수값과 결과같이 같으면 strike, 결과값만 같으면 ball 둘다 같지 않으면 아웃으로 처리.
@@ -49,8 +50,7 @@ class baseBallGame {
         }
       }
     }
-    
-    return answerMsg = s + "strike " + b + "ball";
+    return [s + "strike " + b + "ball", s];
   }
 
 }
@@ -59,27 +59,34 @@ const game = new baseBallGame();
 
 // 변경사항
 
-btnTry.addEventListener('click', function (e) {
+
+console.log(randomNumber1,randomNumber2,randomNumber3);
+
+
+btnTry.addEventListener('click', function () {
   let iDiv = document.createElement('div');
   count++;
-  turnList.appendChild(iDiv);
-  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker();
+  document.querySelector('.turn-list').appendChild(iDiv);
+  iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
 
   // 이부분 코딩중입니다!
-  // if(iDiv.elmatches('3strikes')){ 
-  //   let iDiv2 = document.createElement('div');
-  //   iDiv2.textContent = "Finish! Congraturation!!"; 
-  // }
+  if (game.checker()[1] === 3){ 
+    alert("정답입니다");
+    answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
+    btnTry.setAttribute("disabled", "disabled");
+
+  }
   num1.value = "";
   num2.value = "";
   num3.value = "";
   num1.focus();
 
   if(count === 9){
-    answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.';
-    btnTry.setAttribute('disabled','disabled');
-    btnReset.focus();
+    answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.'
+    alert("게임이 끝났습니다 그만 하시죠 사장님");
+    btnTry.setAttribute("disabled", "disabled");
   }
+ 
 });
 
 num1.addEventListener('keypress', function () {
