@@ -1,18 +1,22 @@
+@charset 'utf-8';
 
-html{
-  background-image: url("../img/baseball-.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  
+html,body{
+  margin:0;
+  padding:0;
 }
 .main__title {
-  color: green;
+  margin:0;
+  padding:10px;
+  color: rgb(255, 255, 255);
   text-align: center;
+  background:#181818;
 }
 
 .input-box {
   text-align: center;
+  border-bottom: solid 1px #ccc;
+  padding:15px 0;
+  background:#ccc;
 }
 
 .box {
@@ -21,6 +25,7 @@ html{
   height: 30px;
   text-align: center;
   border:1px solid #ccc;
+  border-radius: 50%;
 }
 .box:focus{
   border-color:red;
@@ -30,8 +35,12 @@ html{
 .turn-list {
   width: 300px;
   margin: 30px auto;
+  padding:10px;
+  background:#527c2b;
+  border:21px inset #7e3d08;
+  border-radius: 14px;
+  color:#fff;
   /* text-indent: 30px; */
-
 }
 
 .score-box {
@@ -46,19 +55,23 @@ html{
 button{
   box-sizing: border-box;
   border:1px solid #ccc;
-  background:#b9da9b;
+  background:#70cc1a;
   cursor: pointer;
-  height:30px;
-  vertical-align: top;
-  color:#111;
+  height:34px;
+  padding:0 10px;
+  vertical-align: middle;
+  color:#fff;
+}
+.input-box__try{
+  margin-left: 10px;
 }
 .input-box__reset{
-  background:#dbc596;
+  background:#d19209;
 }
 .answer{
-  padding:5px 0;
+  padding:15px;
   text-align: center;
-  color:#f22;
+  color:#111;
   font-size: 20px;
 }
 button:disabled{
@@ -68,7 +81,7 @@ button:disabled{
 .count{
   float: left;
   letter-spacing:5px;
-  margin-right:55px;
+  margin-right:53px;
 }
 .score{
   float: right;
@@ -77,13 +90,15 @@ button:disabled{
 .inumber{
   display: inline-block;
   vertical-align: top;
-  padding: 0 5px;
   background: #181818;
   color: #fff;
   border-left: 1px solid #fff;
-  width: 20px;
+  width: 30px;
   height: 30px;
-  line-height: 30px;
+  line-height: 28px;
   text-align: center;
+  border-radius: 50%;
+  margin:0 2px;
+  text-shadow: 0 0 5px #fced1d;
 }
 /*# sourceMappingURL=index.css.map */
