@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>baseball Game</title>
-    <link rel="stylesheet" href="./index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>baseball Game</title>
+<link rel="stylesheet" href="./index.css">
 </head>
-
 <body>
     <h1 class="main__title">base ball Game</h1>
     <form class="input-box">
@@ -18,7 +16,14 @@
         <button type="button" class="input-box__try" name="btnTry">시도</button>
         <button type="button" class="input-box__reset">다시 시작</button>
     </form>
-    <div class="turn-list"></div>
+    <div class="turn-list">
+        <div class="count">
+            1회차 2 3 4
+        </div>
+        <div class="score">
+            1S 2B
+        </div>
+    </div>
     <div class="answer"></div>
 
     <script src="./index.js"></script>

@@ -22,7 +22,8 @@
 .turn-list {
   width: 500px;
   margin: 0 auto;
-  text-indent: 30px;
+  /* text-indent: 30px; */
+  text-align: center
 }
 
 .score-box {
@@ -33,22 +34,26 @@
   border-bottom: 1px solid #ccc;
 }
 
-[type=button]{
+button{
   box-sizing: border-box;
   border:1px solid #ccc;
   background:#b9da9b;
   cursor: pointer;
   height:30px;
   vertical-align: top;
+  color:#111;
 }
 .input-box__reset{
   background:#dbc596;
 }
-
 .answer{
   padding:5px 0;
   text-align: center;
   color:#f22;
   font-size: 20px;
+}
+button:disabled{
+  border:1px solid #ccc;
+  color:#111;
 }
 /*# sourceMappingURL=index.css.map */

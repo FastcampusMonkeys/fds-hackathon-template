@@ -30,7 +30,6 @@ class baseBallGame {
 
   // userNumber = [userNumber1, userNumber2, userNumber3]; // random number와 비교하기 위해 배열로 지정
 
-  
   checker() {
     // 비교시작
     let s = 0, b = 0, c='OUT'; // 이중포문을 통해 인수값과 결과같이 같으면 strike, 결과값만 같으면 ball 둘다 같지 않으면 아웃으로 처리.
@@ -66,8 +65,14 @@ console.log(randomNumber1,randomNumber2,randomNumber3);
 btnTry.addEventListener('click', function () {
   let iDiv = document.createElement('div');
   iDiv.className = 'score-box';
+  let iCount = document.createElement('div');
+  iCount.className = 'count';
+  let iScore = document.createElement('div');
+  iScore.className = 'socore';
   count++;
   document.querySelector('.turn-list').appendChild(iDiv);
+  iDiv.appendChild(iCount);
+  iDiv.appendChild(iScore);
   iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
 
   // 이부분 코딩중입니다!
@@ -75,7 +80,7 @@ btnTry.addEventListener('click', function () {
     alert("정답입니다");
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
-
+    
   }
   num1.value = "";
   num2.value = "";
