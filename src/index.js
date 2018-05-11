@@ -1,4 +1,4 @@
-const answer = document.querySelector('.answer');
+const answer = document.querySelector('.answer'); // 사용할 변수들 정리
 const btnTry = document.querySelector(".input-box__try");
 const btnReset = document.querySelector('.input-box__reset');
 const num1 = document.getElementsByName('userNumber')[0];
@@ -10,7 +10,7 @@ let count = 0;
 
 
 
-class baseBallGame {
+class baseBallGame { // class 를 정의합니다/
   answerArr = [];
   randomNumCreate() {
     // 랜덤으로 컴퓨터에 저장되는 수 생성
@@ -43,15 +43,12 @@ class baseBallGame {
         } else if (this.randomNumber[i].toString() === this.userNumber[j].value && i !== j) {
           b++;
         }
-        // else if(this.randomNumber[i].toString() !== this.userNumber[j].value && i !== j) {
-        //   answerMsg = c;
-        // }
         if(s === 3){
           answer.textContent = '정답입니다! 정답은' + this.randomNumber + ' 입니다.';
         }
       }
     }
-    return [s + "S " + b + "B", s, b];
+    return [s + "S " + b + "B", s, b]; // 변수를 가져오기 위해 배열로 설정
   }
 
 }
@@ -77,27 +74,28 @@ btnTry.addEventListener('click', function () {
   iNumber2.className = 'inumber';
   iNumber3.className = 'inumber';
   count++;
-  document.querySelector('.turn-list').appendChild(iDiv);
+  document.querySelector('.turn-list').appendChild(iDiv); // css를 위한 자식 노드 생성
   iDiv.appendChild(iCount);
   iDiv.appendChild(iScore);
   iDiv.appendChild(iNumber1);
   iDiv.appendChild(iNumber2);
   iDiv.appendChild(iNumber3);
-  //iDiv.textContent = count + '회 ====== ' + num1.value + ' ' + num2.value + ' ' + num3.value + ' ==== ' + game.checker()[0];
+
   iCount.textContent = count + '회';
   iNumber1.textContent = num1.value;
   iNumber2.textContent = num2.value;
   iNumber3.textContent = num3.value;
 
-  iScore.textContent = game.checker()[0];
+  iScore.textContent = game.checker()[0]; // 스코어 체크 실시
 
-  // 이부분 코딩중입니다!
+  // strike가 3개 일시 정답을 return 합니다
   if (game.checker()[1] === 3){ 
     alert("정답입니다");
+    answer.className += 'on';
     answer.textContent = "정답은 " + game.randomNumber + " 입니다.";
     btnTry.setAttribute("disabled", "disabled");
   }
-  if (game.checker()[1] === 0 && game.checker()[2] === 0) {
+  if (game.checker()[1] === 0 && game.checker()[2] === 0) { // strike와 ball이 한개도 없을 시 out을 return합니다.
     iScore.textContent = 'OUT';
   }
   num1.value = "";
@@ -105,7 +103,8 @@ btnTry.addEventListener('click', function () {
   num3.value = "";
   num1.focus();
 
-  if(count === 9){
+  if(count === 9){ // 9회가 넘어갈시 종료
+    answer.className += ' on';
     answer.textContent = '정답은 ' + game.randomNumber + ' 입니다.'
     alert("게임이 끝났습니다 그만 하시죠 사장님");
     btnTry.setAttribute("disabled", "disabled");
@@ -113,7 +112,7 @@ btnTry.addEventListener('click', function () {
  
 });
 
-num1.addEventListener('keypress', function () {
+num1.addEventListener('keypress', function () { // focus 옮겨가는 부분입니다.
   numTest = /^[0-9]/g;
   if(num1.value !== '' || num1.value !== null || num1.value === numTest){
     num2.focus();
@@ -124,7 +123,6 @@ num1.addEventListener('keypress', function () {
     num3.focus();
   }
 });
-// 이부분 입니다!
 num3.addEventListener('keyup', function () {
   if (num3.value !== '' || num3.value === null) {
     

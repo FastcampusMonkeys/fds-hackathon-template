@@ -5,6 +5,13 @@ body {
     padding: 0;
 }
 
+body {
+    background: url(../img/ball.png);
+    background-repeat: no-repeat;
+    /* background-size: 200px; */
+    background-position: center 200px;
+}
+
 .main__title {
     margin: 0;
     padding: 10px;
@@ -38,7 +45,7 @@ body {
     width: 300px;
     margin: 30px auto;
     padding: 20px 10px;
-    background: #363833;
+    background: rgba(54, 56, 51, .7);
     border: 21px inset #665a50;
     border-radius: 14px;
     color: rgb(234, 255, 49);
@@ -73,10 +80,19 @@ button {
 }
 
 .answer {
+    display: none;
+    width: 300px;
+    background: #333;
+    border: 1px solid #ccc;
+    margin: 0 auto;
     padding: 15px;
     text-align: center;
-    color: #111;
+    color: #fff;
     font-size: 20px;
+}
+
+.answer.on {
+    display: block;
 }
 
 button:disabled {
