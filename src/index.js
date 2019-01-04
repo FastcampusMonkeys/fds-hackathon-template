@@ -22,7 +22,7 @@ class baseBallGame { // class 를 정의합니다/
     answerArr = [randomNumber1,randomNumber2,randomNumber3]
     return answerArr;
   }
- 
+
   // 스코프 오류
   // randomNumber = [randomNumber1, randomNumber2, randomNumber3]; // 배열로 사용하여 비교하기 위해 배열로 정의
  

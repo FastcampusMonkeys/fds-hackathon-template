@@ -28,3 +28,5 @@ SOUNDJS 를 이용하여 효과음을 넣고 싶습니다 (out, strike 사운드
 ## 게임하기
 
 [야구게임](https://fastmonkeysbaseballgame.netlify.com)
+
+![baseball-game](preview.png)
